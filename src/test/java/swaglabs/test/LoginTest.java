@@ -1,6 +1,5 @@
 package swaglabs.test;
 
-import com.codeborne.selenide.Selenide;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Owner;
 import io.qameta.allure.Severity;
@@ -9,16 +8,31 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static io.qameta.allure.SeverityLevel.BLOCKER;
+import static swaglabs.data.Users.locked_user;
+import static swaglabs.data.Users.standart_user;
+import static swaglabs.pages.LoginPage.openLoginPage;
 
 @Feature("SwagLabs")
-@Story("Login")
+@Story("Авторизация")
 public class LoginTest extends BaseTest {
 
     @Test
-    @DisplayName("Успешный логин")
+    @DisplayName("Успешный логин и Logout")
     @Owner("d.kuznetsov")
     @Severity(BLOCKER)
     public void test01() {
-        Selenide.open("/");
+        openLoginPage()
+                .successAuth(standart_user)
+                .openSidebarMenu()
+                .logOut();
+    }
+
+    @Test
+    @DisplayName("Неуспешный логин")
+    @Owner("d.kuznetsov")
+    @Severity(BLOCKER)
+    public void test02() {
+        openLoginPage()
+                .failedAuth(locked_user);
     }
 }
