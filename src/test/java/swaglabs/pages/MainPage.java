@@ -11,11 +11,12 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
 import static swaglabs.data.Items.getAllItems;
 
-public class MainPage implements ISidebarLink {
+public class MainPage implements ISidebarLink, IBasketLink {
 
     private final String itemsList = ".inventory_item";
     private final String itemsNamesList = itemsList + " .inventory_item_name";
@@ -90,6 +91,30 @@ public class MainPage implements ISidebarLink {
                 .map(price -> "$" + price)
                 .collect(Collectors.toList());
         Assertions.assertEquals(expectedSortedItemsNames, actualItemsNames);
+        return this;
+    }
+
+    @Step("Открыть карточку товара")
+    public ItemPage openItemPage(Item item) {
+        $(byText(item.getItemName())).parent().click();
+        return new ItemPage();
+    }
+
+    @Step("Добавить товар в корзину")
+    public MainPage addItemToBasket(Item item) {
+        $(byText(item.getItemName()))
+                .ancestor(itemsList)
+                .$(byText("Add to cart"))
+                .click();
+        return this;
+    }
+
+    @Step("Удалитьтовар из корзины")
+    public MainPage removeItemFromBasket(Item item) {
+        $(byText(item.getItemName()))
+                .ancestor(itemsList)
+                .$(byText("Remove"))
+                .click();
         return this;
     }
 }

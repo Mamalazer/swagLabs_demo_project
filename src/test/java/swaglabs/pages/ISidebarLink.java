@@ -1,11 +1,14 @@
 package swaglabs.pages;
 
+import io.qameta.allure.Step;
+
 import static com.codeborne.selenide.Selenide.$;
 
 public interface ISidebarLink {
 
-    default SidebarMenu openSidebarMenu() {
+    @Step("Открыть сайдбар с меню")
+    default SidebarMenuPage openSidebarMenu() {
         $("#react-burger-menu-btn").click();
-        return new SidebarMenu();
+        return new SidebarMenuPage();
     }
 }
