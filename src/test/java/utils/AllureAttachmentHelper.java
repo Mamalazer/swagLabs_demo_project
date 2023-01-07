@@ -54,7 +54,7 @@ public class AllureAttachmentHelper {
     }
 
     public static URL getVideoUrl() {
-        String videoUrl = PROP.getRemoteUrlForVideo() + sessionId() + ".mp4";
+        String videoUrl = PROP.getRemoteUrl() + "/video/" + sessionId() + ".mp4";
 
         try {
             return new URL(videoUrl);

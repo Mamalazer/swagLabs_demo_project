@@ -46,9 +46,6 @@ public class Prop {
         @Key("remoteUrl")
         String getRemoteUrl();
 
-        @Key("remoteUrlForVideo")
-        String getRemoteUrlForVideo();
-
         @Key("pageLoadTimeout")
         Long getPageLoadTimeout();
 

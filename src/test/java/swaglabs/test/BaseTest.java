@@ -25,7 +25,7 @@ public class BaseTest {
         Configuration.headless = PROP.isHeadless();
 
         if (PROP.isRemote()) {
-            Configuration.remote = PROP.getRemoteUrl();
+            Configuration.remote = PROP.getRemoteUrl() + "/wd/hub";
             DesiredCapabilities capabilities = new DesiredCapabilities();
             capabilities.setCapability("enableVNC", true);
             capabilities.setCapability("enableVideo", true);
