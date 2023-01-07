@@ -126,7 +126,7 @@ remoteUrl=https://selenoid.autotests.cloud
 <img title="Jenkins" src="readme_design/screens/Jenkins.png">
 </p>
 
-## <img width="4%" title="Allure_Report" src="readme_design/logo/Allure_Report.svg"> Главная страница Allure-отчета
+## <img width="4%" title="Allure_Report" src="readme_design/logo/Allure_Report.svg"> Главная страница allure отчета
 
 <p align="center">
 <img title="Allure_main" src="readme_design/screens/Allure_main.png">
