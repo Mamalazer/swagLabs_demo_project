@@ -8,7 +8,7 @@
 >
 > ➠ [Запуск тестов из терминала](#запуск-тестов-из-терминала)
 >
-> ➠ [Запуск тестов в Jenkins](#запуск тестов в Jenkins)
+> ➠ [Запуск тестов в Jenkins](#запуск-тестов-в-Jenkins)
 >
 > ➠ [Отчет о результатах тестирования в Allure Report](#главная-страница-allure-отчета)
 >
@@ -118,7 +118,7 @@ isRemote=true
 remoteUrl=https://selenoid.autotests.cloud
 ```
 
-### <img width="4%" title="Jenkins" src="readme_design/logo/Jenkins.svg"> Запуск тестов в Jenkins
+## <img width="4%" title="Jenkins" src="readme_design/logo/Jenkins.svg"> Запуск тестов в Jenkins
 
 > Для запуска тестов используется параметризированная сборка
 
@@ -126,7 +126,7 @@ remoteUrl=https://selenoid.autotests.cloud
 <img title="Jenkins" src="readme_design/screens/Jenkins.png">
 </p>
 
-### <img width="4%" title="Allure_Report" src="readme_design/logo/Allure_Report.svg"> Главная страница Allure-отчета
+## <img width="4%" title="Allure_Report" src="readme_design/logo/Allure_Report.svg"> Главная страница Allure-отчета
 
 <p align="center">
 <img title="Allure_main" src="readme_design/screens/Allure_main.png">
